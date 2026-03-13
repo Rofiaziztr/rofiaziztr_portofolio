@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -25,19 +25,51 @@
     />
   </head>
   <body>
+    <div class="progress-bar" id="reading-progress"></div>
     <div id="progress" aria-hidden="true"></div>
+
+    <!-- Project Modal -->
+    <div class="modal-overlay" id="project-modal">
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close project modal">
+          &times;
+        </button>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
     <a class="skip-link" href="#about">Skip to content</a>
     <header class="site-header">
       <div class="container">
         <div class="logo">Rofi Aziz Taufik Rahmat</div>
-        <nav class="nav" aria-label="Primary">
-          <a href="#about">About</a>
-          <a href="#timeline">Timeline</a>
-          <a href="#projects">Projects</a>
-          <a href="#tooling">Tooling</a>
-          <a href="#contact">Contact</a>
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger"></span>
+        </button>
+        <nav class="nav" id="nav-menu" aria-label="Primary">
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#timeline" data-i18n="nav.timeline">Timeline</a>
+          <a href="#projects" data-i18n="nav.projects">Projects</a>
+          <a href="#tooling" data-i18n="nav.tooling">Tooling</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+          <div class="mobile-only mobile-nav-footer">
+            <div class="lang-switch">
+              <button class="lang-btn active" data-lang="en">EN</button>
+              <span class="lang-divider">|</span>
+              <button class="lang-btn" data-lang="id">ID</button>
+            </div>
+            <a class="btn ghost" href="#contact" data-i18n="nav.work_with_me">Work With Me</a>
+          </div>
         </nav>
-        <a class="btn ghost" href="#contact">Work With Me</a>
+        <div class="header-actions desktop-only">
+          <div class="lang-switch">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <span class="lang-divider">|</span>
+            <button class="lang-btn" data-lang="id">ID</button>
+          </div>
+          <a class="btn ghost" href="#contact" data-i18n="nav.work_with_me"
+            >Work With Me</a
+          >
+        </div>
       </div>
     </header>
 
@@ -45,11 +77,11 @@
       <section id="about" class="hero">
         <div class="container hero__grid">
           <div>
-            <p class="eyebrow">
+            <p class="eyebrow" data-i18n="hero.eyebrow">
               Product Engineer & Web Developer • Laravel & Tailwind
             </p>
-            <h1>Hi, I’m Rofi Aziz Taufik Rahmat.</h1>
-            <p class="lead">
+            <h1 data-i18n="hero.title">Hi, I’m Rofi Aziz Taufik Rahmat.</h1>
+            <p class="lead" data-i18n="hero.lead">
               I’m a product engineer and web developer focused on dependable
               admin systems that feel effortless to operate. Every build
               balances reliable software quality, transparent project
@@ -57,38 +89,31 @@
               whatever tooling a project demands.
             </p>
             <div class="hero__badges" aria-label="Core value badges">
-              <span>Reliable Quality</span>
-              <span>Transparent Delivery</span>
-              <span>Budget-Friendly</span>
+              <span class="badge" data-i18n="hero.badge1"
+                >Reliable Quality</span
+              >
+              <span class="badge" data-i18n="hero.badge2"
+                >Transparent Delivery</span
+              >
+              <span class="badge" data-i18n="hero.badge3">Budget-Friendly</span>
             </div>
-            <div class="cta-row">
-              <a class="btn primary" href="mailto:rofiaziztaufikr@gmail.com"
-                >Email</a
-              >
-              <a
-                class="btn secondary"
-                href="https://www.linkedin.com/in/rofi-aziz-taufik-rahmat-30b381306"
-                target="_blank"
-                rel="noreferrer"
-                >LinkedIn</a
-              >
-              <a
-                class="btn outline"
-                href="https://wa.me/628882265329"
-                target="_blank"
-                rel="noreferrer"
-                >WhatsApp</a
-              >
-            </div>
-            <p class="micro">1 live deployment · 3 academic accelerators</p>
-          </div>
-          <div class="quote-card">
-            <p>
-              “Every prototype ships with a clear sprint log, so stakeholders
-              never guess what’s next.”
+            <p class="micro" data-i18n="hero.micro">
+              2 live deployments · 3 academic accelerators
             </p>
-            <span class="quote-card__meta"
-              >Focused on calm interfaces with measurable impact.</span
+          </div>
+          <div class="quote-container">
+            <div class="quote-card">
+              <p data-i18n="hero.quote">
+                “Every prototype ships with a clear sprint log, so stakeholders
+                never guess what’s next.”
+              </p>
+              <span class="quote-card__meta" data-i18n="hero.quote_meta"
+                >Focused on calm interfaces with measurable impact.</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
             >
           </div>
         </div>
@@ -97,30 +122,44 @@
       <section id="timeline" class="timeline">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">Project Durations</p>
-            <h2>Delivery timeline at a glance</h2>
+            <p class="eyebrow" data-i18n="timeline.eyebrow">
+              Project Durations
+            </p>
+            <h2 data-i18n="timeline.title">Delivery timeline at a glance</h2>
           </div>
           <div class="timeline__grid">
-            <article class="reveal">
-              <h3>Tumas</h3>
-              <p class="meta">3 months</p>
-              <p>
+            <article class="skill-card reveal">
+              <h3 data-i18n="timeline.dianali.title">Dianalicollection</h3>
+              <p class="meta" data-i18n="timeline.dianali.meta">
+                Production · Feb 2026
+              </p>
+              <p data-i18n="timeline.dianali.desc">
+                Smart POS & Inventory for Textile Wholesalers with complex unit
+                tracking.
+              </p>
+            </article>
+            <article class="skill-card reveal">
+              <h3 data-i18n="timeline.tumas.title">Tumas</h3>
+              <p class="meta" data-i18n="timeline.tumas.meta">3 months</p>
+              <p data-i18n="timeline.tumas.desc">
                 Task management assistant for campus teams with workload
                 forecasts.
               </p>
             </article>
-            <article class="reveal">
-              <h3>Eventflow</h3>
-              <p class="meta">1+ month · Aug 2025</p>
-              <p>
+            <article class="skill-card reveal">
+              <h3 data-i18n="timeline.eventflow.title">Eventflow</h3>
+              <p class="meta" data-i18n="timeline.eventflow.meta">
+                1+ month · Aug 2025
+              </p>
+              <p data-i18n="timeline.eventflow.desc">
                 Event administration suite for PSDMBP with analytics-ready
                 dashboards.
               </p>
             </article>
-            <article class="reveal">
-              <h3>Sikatrumah.co.id</h3>
-              <p class="meta">1-week sprint → ongoing</p>
-              <p>
+            <article class="skill-card reveal">
+              <h3 data-i18n="timeline.sikatrumah.title">Sikatrumah</h3>
+              <p class="meta" data-i18n="timeline.sikatrumah.meta">1 month</p>
+              <p data-i18n="timeline.sikatrumah.desc">
                 Deployed prototype that keeps evolving with procurement
                 stakeholders.
               </p>
@@ -132,11 +171,73 @@
       <section id="projects" class="projects">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">Selected Work</p>
-            <h2>Embedded with civic and campus teams end-to-end</h2>
+            <p class="eyebrow" data-i18n="projects.eyebrow">Professional Projects</p>
+            <h2 data-i18n="projects.title">
+              Embedded with civic and business teams end-to-end
+            </h2>
           </div>
 
           <div class="projects__grid">
+            <article class="project-card reveal">
+              <a
+                class="project-card__media-link"
+                href="assets/dashboard_dianaalicollection.png"
+                data-filename="dashboard_dianaalicollection.png"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open full Dianaalicollection dashboard screenshot"
+              >
+                <figure class="project-card__media">
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    src="assets/dashboard_dianaalicollection.png"
+                    data-filename="dashboard_dianaalicollection.png"
+                    alt="Dianaalicollection dashboard"
+                  />
+                </figure>
+              </a>
+              <div>
+                <h3 data-i18n="projects.dianali.title">Dianaalicollection</h3>
+                <span
+                  class="project__type project__type--prod"
+                  data-i18n="projects.types.prod"
+                  >Production</span
+                >
+                <p class="meta" data-i18n="projects.dianali.meta">
+                  Jan - Feb · Laravel · Live
+                </p>
+                <div class="project-description">
+                  <p data-i18n="projects.dianali.desc">
+                    A specialized Smart POS & Inventory system for textile
+                    wholesalers. It solves the complexity of tracking large
+                    units (Rolls, Cartons, Bales) with varying internal volumes.
+                  </p>
+                  <ul>
+                    <li data-i18n="projects.dianali.feat1">
+                      <strong>Dynamic Unit Metadata:</strong> Validates
+                      inventory per primary unit while storing unique volume
+                      details for each item.
+                    </li>
+                    <li data-i18n="projects.dianali.feat2">
+                      <strong>Category Logic:</strong> Different handling for
+                      Fabrics (Rolls), Smokrings (Cartons), and Lace (Bales).
+                    </li>
+                    <li data-i18n="projects.dianali.feat3">
+                      <strong>Stock Splitting:</strong> Handles remnants and
+                      partial units as new entities with precise volume
+                      tracking.
+                    </li>
+                  </ul>
+                </div>
+                <div class="badge-row" aria-label="Tech stack">
+                  <span>Laravel 11</span>
+                  <span>MySQL</span>
+                  <span>Tailwind</span>
+                </div>
+              </div>
+            </article>
+
             <article class="project-card reveal">
               <a
                 class="project-card__media-link"
@@ -157,12 +258,16 @@
                 </figure>
               </a>
               <div>
-                <h3>Sikatrumah.co.id</h3>
-                <span class="project__type project__type--prod"
+                <h3 data-i18n="projects.sikatrumah.title">Sikatrumah</h3>
+                <span
+                  class="project__type project__type--prod"
+                  data-i18n="projects.types.prod"
                   >Production</span
                 >
-                <p class="meta">1-week sprint · Laravel · Tailwind</p>
-                <p>
+                <p class="meta" data-i18n="projects.sikatrumah.meta">
+                  1 month · Laravel · Tailwind
+                </p>
+                <p data-i18n="projects.sikatrumah.desc">
                   A procurement workflow for the West Java Secretariat built in
                   record time. Four role-specific dashboards keep Ajudan, PPTK,
                   KPA/KBU, and Sekretariat Daerah aligned from request to
@@ -170,13 +275,15 @@
                   review sessions.
                 </p>
                 <ul>
-                  <li>
+                  <li data-i18n="projects.sikatrumah.li1">
                     Ajudan submit needs, PPTK handles budgeting + approvals.
                   </li>
-                  <li>
+                  <li data-i18n="projects.sikatrumah.li2">
                     KPA/KBU and Sekretariat Daerah get read-only oversight.
                   </li>
-                  <li>Weekly review cadence with actionable sprint notes.</li>
+                  <li data-i18n="projects.sikatrumah.li3">
+                    Weekly review cadence with actionable sprint notes.
+                  </li>
                 </ul>
                 <div class="badge-row" aria-label="Tech stack">
                   <span>Laravel</span>
@@ -186,7 +293,17 @@
                 </div>
               </div>
             </article>
+          </div>
 
+          <!-- Academic Prototypes Section -->
+          <div class="section-heading" style="margin-top: 5rem;">
+            <p class="eyebrow" data-i18n="projects.academic.eyebrow">Academic Prototypes</p>
+            <h2 data-i18n="projects.academic.title">
+              University-led R&D and rapid explorations
+            </h2>
+          </div>
+
+          <div class="projects__grid">
             <article class="project-card reveal">
               <a
                 class="project-card__media-link"
@@ -207,21 +324,29 @@
                 </figure>
               </a>
               <div>
-                <h3>Eventflow</h3>
-                <span class="project__type project__type--academic"
+                <h3 data-i18n="projects.eventflow.title">Eventflow</h3>
+                <span
+                  class="project__type project__type--academic"
+                  data-i18n="projects.types.academic"
                   >Academic prototype</span
                 >
-                <p class="meta">1+ month · Aug 2025 · Laravel</p>
-                <p>
+                <p class="meta" data-i18n="projects.eventflow.meta">
+                  1+ month · Aug 2025 · Laravel
+                </p>
+                <p data-i18n="projects.eventflow.desc">
                   A command center for PSDMBP to monitor 40+ events, user
                   cohorts, and categories. Analytics cards surface progress at a
                   glance, while filters, exports, and Google Calendar sync keep
                   admins and invitees aligned in seconds.
                 </p>
                 <ul>
-                  <li>Unified dashboard for events, users, and categories.</li>
-                  <li>Powerful search + filter tools for quick audits.</li>
-                  <li>
+                  <li data-i18n="projects.eventflow.li1">
+                    Unified dashboard for events, users, and categories.
+                  </li>
+                  <li data-i18n="projects.eventflow.li2">
+                    Powerful search + filter tools for quick audits.
+                  </li>
+                  <li data-i18n="projects.eventflow.li3">
                     Export-ready participant data plus Google Calendar invites.
                   </li>
                 </ul>
@@ -254,21 +379,31 @@
                 </figure>
               </a>
               <div>
-                <h3>Tumas</h3>
-                <span class="project__type project__type--academic"
+                <h3 data-i18n="projects.tumas.title">Tumas</h3>
+                <span
+                  class="project__type project__type--academic"
+                  data-i18n="projects.types.academic"
                   >Academic prototype</span
                 >
-                <p class="meta">3 months · Laravel · Tailwind</p>
-                <p>
+                <p class="meta" data-i18n="projects.tumas.meta">
+                  3 months · Laravel · Tailwind
+                </p>
+                <p data-i18n="projects.tumas.desc">
                   A campus-focused task manager that keeps student teams
                   accountable. Escalations, auto-reminders, and workload
                   heatmaps ensure supervisors always know what needs attention
                   next.
                 </p>
                 <ul>
-                  <li>Smart status escalation with calendar exports.</li>
-                  <li>Personalized workload insights per student.</li>
-                  <li>Role-aware document handling via FilePckr.</li>
+                  <li data-i18n="projects.tumas.li1">
+                    Smart status escalation with calendar exports.
+                  </li>
+                  <li data-i18n="projects.tumas.li2">
+                    Personalized workload insights per student.
+                  </li>
+                  <li data-i18n="projects.tumas.li3">
+                    Role-aware document handling via FilePckr.
+                  </li>
                 </ul>
                 <div class="badge-row" aria-label="Tech stack">
                   <span>Laravel</span>
@@ -299,20 +434,30 @@
                 </figure>
               </a>
               <div>
-                <h3>Kaloriku</h3>
-                <span class="project__type project__type--academic"
+                <h3 data-i18n="projects.kaloriku.title">Kaloriku</h3>
+                <span
+                  class="project__type project__type--academic"
+                  data-i18n="projects.types.academic"
                   >Academic prototype</span
                 >
-                <p class="meta">Academic prototype · Bootstrap</p>
-                <p>
+                <p class="meta" data-i18n="projects.kaloriku.meta">
+                  Academic prototype · Bootstrap
+                </p>
+                <p data-i18n="projects.kaloriku.desc">
                   A lightweight calorie tracker dedicated to student athletes.
                   Charts, quick searches, and offline-first logging make
                   nutrition reviews easier after every training session.
                 </p>
                 <ul>
-                  <li>Macro trends visualized with Chart.js.</li>
-                  <li>Fast lookup + suggestions for common meals.</li>
-                  <li>Offline capture that syncs when reconnected.</li>
+                  <li data-i18n="projects.kaloriku.li1">
+                    Macro trends visualized with Chart.js.
+                  </li>
+                  <li data-i18n="projects.kaloriku.li2">
+                    Fast lookup + suggestions for common meals.
+                  </li>
+                  <li data-i18n="projects.kaloriku.li3">
+                    Offline capture that syncs when reconnected.
+                  </li>
                 </ul>
                 <div class="badge-row" aria-label="Tech stack">
                   <span>Bootstrap</span>
@@ -328,9 +473,11 @@
       <section id="tooling" class="skills">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">Tooling & Workflow</p>
-            <h2>Coverage with proficiency levels</h2>
-            <p class="meta">
+            <p class="eyebrow" data-i18n="tooling.eyebrow">
+              Tooling & Workflow
+            </p>
+            <h2 data-i18n="tooling.title">Coverage with proficiency levels</h2>
+            <p class="meta" data-i18n="tooling.desc">
               A shorthand for how I deliver: the stacks I rely on and how
               confident I am with each piece.
             </p>
@@ -338,82 +485,92 @@
           <div class="skills__grid">
             <article class="skill-card">
               <div class="skill-card__header">
-                <h3>Laravel + Blade</h3>
-                <span class="skill-card__level" aria-label="Proficiency: Expert"
+                <h3 data-i18n="tooling.item1.title">Laravel + Blade</h3>
+                <span
+                  class="skill-card__level"
+                  aria-label="Proficiency: Expert"
+                  data-i18n="tooling.levels.expert"
                   >Expert</span
                 >
               </div>
-              <p>
+              <p data-i18n="tooling.item1.desc">
                 Primary delivery stack for production-ready admin systems and
                 rapid prototyping.
               </p>
             </article>
             <article class="skill-card">
               <div class="skill-card__header">
-                <h3>Tailwind CSS + Alpine.js</h3>
+                <h3 data-i18n="tooling.item2.title">
+                  Tailwind CSS + Alpine.js
+                </h3>
                 <span
                   class="skill-card__level"
                   aria-label="Proficiency: Advanced"
+                  data-i18n="tooling.levels.advanced"
                   >Advanced</span
                 >
               </div>
-              <p>
-                Utility-first styling with lightweight interactions for
+              <p data-i18n="tooling.item2.desc">
+                Utility-first styling with lightweight interations for
                 responsive, stateful dashboards.
               </p>
             </article>
             <article class="skill-card">
               <div class="skill-card__header">
-                <h3>BladeWind Components</h3>
+                <h3 data-i18n="tooling.item3.title">BladeWind Components</h3>
                 <span
                   class="skill-card__level"
                   aria-label="Proficiency: Advanced"
+                  data-i18n="tooling.levels.advanced"
                   >Advanced</span
                 >
               </div>
-              <p>
+              <p data-i18n="tooling.item3.desc">
                 Accessibility-first Laravel UI kit that keeps every panel
                 consistent.
               </p>
             </article>
             <article class="skill-card">
               <div class="skill-card__header">
-                <h3>FilePckr & DatePickr</h3>
+                <h3 data-i18n="tooling.item4.title">FilePckr & DatePickr</h3>
                 <span
                   class="skill-card__level"
                   aria-label="Proficiency: Advanced"
+                  data-i18n="tooling.levels.advanced"
                   >Advanced</span
                 >
               </div>
-              <p>
+              <p data-i18n="tooling.item4.desc">
                 Secure uploads and dependable scheduling inside procurement and
                 campus flows.
               </p>
             </article>
             <article class="skill-card">
               <div class="skill-card__header">
-                <h3>PostgreSQL / MySQL</h3>
+                <h3 data-i18n="tooling.item5.title">PostgreSQL / MySQL</h3>
                 <span
                   class="skill-card__level"
                   aria-label="Proficiency: Advanced"
+                  data-i18n="tooling.levels.advanced"
                   >Advanced</span
                 >
               </div>
-              <p>
+              <p data-i18n="tooling.item5.desc">
                 Schema planning, migrations, and performance tuning for
                 transactional workloads.
               </p>
             </article>
             <article class="skill-card">
               <div class="skill-card__header">
-                <h3>Figma + Chart.js</h3>
+                <h3 data-i18n="tooling.item6.title">Figma + Chart.js</h3>
                 <span
                   class="skill-card__level"
                   aria-label="Proficiency: Intermediate"
+                  data-i18n="tooling.levels.intermediate"
                   >Intermediate</span
                 >
               </div>
-              <p>
+              <p data-i18n="tooling.item6.desc">
                 Design handoff plus data visualization for reporting screens and
                 executive summaries.
               </p>
@@ -425,40 +582,57 @@
       <section id="contact" class="contact">
         <div class="container contact__grid">
           <div>
-            <p class="eyebrow">Let’s build together</p>
-            <h2>Ready whenever the brief is</h2>
-            <p>
+            <p class="eyebrow" data-i18n="contact.eyebrow">
+              Let’s build together
+            </p>
+            <h2 data-i18n="contact.title">Ready whenever the brief is</h2>
+            <p data-i18n="contact.desc">
               I partner with civic teams, startups, and agencies that need
               dependable systems—Laravel-powered or otherwise. Bring me in
               whenever you want calm UX, predictable delivery, and a
               collaborator who isn’t afraid to explore a new stack.
             </p>
             <div class="cta-row">
-              <a class="btn primary" href="mailto:rofiaziztaufikr@gmail.com"
+              <a
+                class="btn social"
+                href="mailto:rofiaziztaufikr@gmail.com"
+                data-i18n="hero.cta.email"
                 >Email</a
               >
               <a
-                class="btn secondary"
+                class="btn social"
                 href="https://www.linkedin.com/in/rofi-aziz-taufik-rahmat-30b381306"
                 target="_blank"
                 rel="noreferrer"
+                data-i18n="hero.cta.linkedin"
                 >LinkedIn</a
               >
               <a
-                class="btn outline"
+                class="btn social"
                 href="https://wa.me/628882265329"
                 target="_blank"
                 rel="noreferrer"
+                data-i18n="hero.cta.whatsapp"
                 >WhatsApp</a
+              >
+              <a
+                class="btn social"
+                href="https://www.instagram.com/rofiaziztr/"
+                target="_blank"
+                rel="noreferrer"
+                data-i18n="hero.cta.instagram"
+                >Instagram</a
               >
             </div>
           </div>
           <div class="contact__card">
-            <p>
+            <p data-i18n="contact.quote">
               Need references or a sprint log sample? I’m happy to share
               walkthroughs from recent builds.
             </p>
-            <a class="btn ghost" href="#">Download Resume (soon)</a>
+            <a class="btn ghost" href="#" data-i18n="contact.resume"
+              >Download Resume (soon)</a
+            >
           </div>
         </div>
       </section>
@@ -466,9 +640,11 @@
 
     <footer class="site-footer">
       <div class="container">
+        <p class="footer-note" data-i18n="footer.note">Built with love using vanilla technologies.</p>
         <p>
-          © <span id="year"></span> Rofi Aziz Taufik Rahmat. Built with vanilla
-          HTML, CSS, and JS.
+          <span data-i18n="footer.copy"
+            >© <span id="year"></span> Rofi Aziz Taufik Rahmat.</span
+          >
         </p>
       </div>
     </footer>
